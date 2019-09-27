@@ -23,7 +23,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: Color(0xff464159),
       body: ModalProgressHUD(
         inAsyncCall: showSpiner,
         child: Padding(
@@ -47,6 +47,8 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
               TextField(
                   textAlign: TextAlign.center,
                   keyboardType: TextInputType.emailAddress,
+                  cursorColor: Colors.white,
+                  style: TextStyle(color: Colors.white),
                   onChanged: (value) {
                     email = value;
                   },
@@ -58,6 +60,8 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
               TextField(
                   obscureText: true,
                   textAlign: TextAlign.center,
+                  cursorColor: Colors.white,
+                  style: TextStyle(color: Colors.white),
                   onChanged: (value) {
                     password = value;
                   },
@@ -68,7 +72,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
               ),
               RoundedButton(
                 title: 'Register',
-                color: Colors.blueAccent,
+                color: Color(0xff8bbabb),
                 onPressed: () async {
                   setState(() {
                     showSpiner = true;

@@ -36,7 +36,7 @@ class _WelcomeScreenState extends State<WelcomeScreen>
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: Color(0xff464159),
       body: Padding(
         padding: EdgeInsets.symmetric(horizontal: 24.0),
         child: Column(
@@ -52,8 +52,9 @@ class _WelcomeScreenState extends State<WelcomeScreen>
                     height: 60,
                   ),
                 ),
+                SizedBox(width: 20),
                 TypewriterAnimatedTextKit(
-                  text: ['Flash Chat'],
+                  text: ['SimpleChat'],
                   textStyle: TextStyle(
                     fontSize: 45.0,
                     fontWeight: FontWeight.w900,
@@ -66,16 +67,15 @@ class _WelcomeScreenState extends State<WelcomeScreen>
             ),
             RoundedButton(
               title: 'Log In',
-              color: Colors.lightBlueAccent,
-              onPressed: (){
+              color: Color(0xffc7f0db),
+              onPressed: () {
                 Navigator.pushNamed(context, LoginScreen.id);
-
               },
             ),
             RoundedButton(
               title: 'Register',
-              color: Colors.blueAccent,
-              onPressed: (){
+              color: Color(0xff8bbabb),
+              onPressed: () {
                 Navigator.pushNamed(context, RegistrationScreen.id);
               },
             )
@@ -85,4 +85,3 @@ class _WelcomeScreenState extends State<WelcomeScreen>
     );
   }
 }
-

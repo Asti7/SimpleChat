@@ -67,24 +67,33 @@ class _ChatScreenState extends State<ChatScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Color(0xff6c7b95),
       appBar: AppBar(
         leading: IconButton(
-            icon: Icon(Icons.backspace),
-            onPressed: ()async {
+            icon: Icon(
+              Icons.backspace,
+              color: Color(0xff8bbabb),
+            ),
+            onPressed: () async {
               _auth.signOut();
               Navigator.pushNamed(context, WelcomeScreen.id);
             }),
         actions: <Widget>[
           IconButton(
-              icon: Icon(Icons.delete),
+              icon: Icon(Icons.delete,
+              color: Color(0xff8bbabb),),
               onPressed: () {
                 deleteMessages();
               }),
         ],
-        title: Text('⚡️Chat'),
-        backgroundColor: Colors.lightBlueAccent,
+        title: Text(
+          'SimpleChat',
+          style: TextStyle(color: Color(0xff8bbabb)),
+        ),
+        backgroundColor: Color(0xff464159),
       ),
       body: SafeArea(
+        
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -192,7 +201,7 @@ class MessageBubble extends StatelessWidget {
           Text(
             sender,
             style: TextStyle(
-              fontSize: 12,
+              fontSize: 14,
             ),
           ),
           SizedBox(height: 5),
@@ -207,13 +216,13 @@ class MessageBubble extends StatelessWidget {
                     bottomLeft: Radius.circular(30),
                     topRight: Radius.circular(30)),
             elevation: 5,
-            color: isMe ? Colors.lightBlueAccent : Colors.white,
+            color: isMe ? Color(0xffc7f0db) : Color(0xff8bbabb),
             child: Padding(
               padding: EdgeInsets.symmetric(vertical: 10, horizontal: 20),
               child: Text(
                 '$text',
                 style: TextStyle(
-                  color: isMe ? Colors.white : Colors.black54,
+                  color: isMe ? Colors.black : Colors.black,
                   fontSize: 15,
                 ),
               ),

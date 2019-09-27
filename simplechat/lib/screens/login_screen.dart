@@ -13,7 +13,6 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
-
   bool showSpiner = false;
   final _auth = FirebaseAuth.instance;
 
@@ -22,7 +21,7 @@ class _LoginScreenState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: Color(0xff464159),
       body: ModalProgressHUD(
         inAsyncCall: showSpiner,
         child: Padding(
@@ -46,6 +45,8 @@ class _LoginScreenState extends State<LoginScreen> {
               TextField(
                   keyboardType: TextInputType.emailAddress,
                   textAlign: TextAlign.center,
+                  cursorColor: Colors.white,
+                  style: TextStyle(color: Colors.white),
                   onChanged: (value) {
                     email = value;
                   },
@@ -55,21 +56,23 @@ class _LoginScreenState extends State<LoginScreen> {
                 height: 8.0,
               ),
               TextField(
-                  textAlign: TextAlign.center,
-                  obscureText: true,
-                  onChanged: (value) {
-                    password = value;
-                  },
-                  decoration: kTextFieldDecoration.copyWith(
-                      hintText: 'Enter your password ')),
+                textAlign: TextAlign.center,
+                obscureText: true,
+                style: TextStyle(color: Colors.white),
+                cursorColor: Colors.white,
+                onChanged: (value) {
+                  password = value;
+                },
+                decoration: kTextFieldDecoration.copyWith(
+                    hintText: 'Enter your password '),
+              ),
               SizedBox(
                 height: 24.0,
               ),
               RoundedButton(
                 title: 'Log In',
-                color: Colors.lightBlueAccent,
+                color: Color(0xffc7f0db),
                 onPressed: () async {
-
                   setState(() {
                     showSpiner = true;
                   });
