@@ -1,10 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:simplechat/screens/welcome_screen.dart';
 import 'package:simplechat/screens/login_screen.dart';
 import 'package:simplechat/screens/registration_screen.dart';
 import 'package:simplechat/screens/chat_screen.dart';
 
-void main() => runApp(SimpleChat());
+void main() {
+SystemChrome.setPreferredOrientations(
+          [DeviceOrientation.portraitUp,DeviceOrientation.portraitDown])
+      .then((_) {
+    runApp(SimpleChat());
+  });
+}
 
 class SimpleChat extends StatelessWidget {
   @override
